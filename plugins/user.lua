@@ -2,7 +2,6 @@ return {
   {
     "Shaunaaaaa/darkplus.nvim",
   },
-
   {
     "gen740/SmoothCursor.nvim",
     cond = vim.g.neovide == nil,
