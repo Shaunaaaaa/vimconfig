@@ -79,4 +79,49 @@ return {
     "github/copilot.vim",
     lazy = false,
   },
+  {
+    "m-demare/hlargs.nvim",
+    lazy = false,
+    opts = {
+      enable = true,
+    },
+  },
+  {
+    "ray-x/lsp_signature.nvim",
+    lazy = false,
+    opts = {
+      enable = true,
+    },
+    user_config = function()
+      require("lspconfig").gopls.setup()
+      return {
+        color = "#ef9062",
+        bind = true, -- This is mandatory, otherwise border config won't get registered.
+        max_width = 180,
+        -- handler_opts = {
+        --   border = "rounded"
+        -- }
+      }
+    end,
+  },
+  {
+    "yamatsum/nvim-cursorline",
+    lazy = false,
+    opts = {
+      cursorline = {
+        enable = true,
+        timeout = 1000,
+        number = false,
+      },
+      cursorword = {
+        enable = true,
+        min_length = 3,
+        hl = { underline = true },
+      },
+    },
+  },
+  {
+    "mg979/vim-visual-multi",
+    lazy = false,
+  },
 }
