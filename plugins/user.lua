@@ -19,8 +19,8 @@ return {
           { cursor = "●", texthl = "SmoothCursorYellow" },
           { cursor = "●", texthl = "SmoothCursorGreen" },
           { cursor = "•", texthl = "SmoothCursorAqua" },
-          { cursor = ".", texthl = "SmoothCursorBlue" },
-          { cursor = ".", texthl = "SmoothCursorPurple" },
+          { cursor = ".",   texthl = "SmoothCursorBlue" },
+          { cursor = ".",   texthl = "SmoothCursorPurple" },
         },
         tail = { cursor = nil, texthl = "SmoothCursor" },
       },
@@ -45,11 +45,11 @@ return {
         },
         -- 您可以启用一个预设以便于配置
         presets = {
-          bottom_search = false, -- 使用经典的底部命令行进行搜索
-          command_palette = true, -- 将cmdline和弹出菜单放在一起
+          bottom_search = false,        -- 使用经典的底部命令行进行搜索
+          command_palette = true,       -- 将cmdline和弹出菜单放在一起
           long_message_to_split = true, -- 长消息拆分发送
-          inc_rename = false, -- 启用inc-rename.nvim的输入对话框
-          lsp_doc_border = false, -- 为悬停文档和签名帮助添加边框
+          inc_rename = false,           -- 启用inc-rename.nvim的输入对话框
+          lsp_doc_border = false,       -- 为悬停文档和签名帮助添加边框
         },
       }
     end,
@@ -123,5 +123,20 @@ return {
   {
     "mg979/vim-visual-multi",
     lazy = false,
+  },
+  {
+    "folke/trouble.nvim", -- Helps you solve all the trouble your code is causing
+    keys = { { "<leader>x", "<leader>x", desc = "Trouble help" } },
+    cmd = { "Trouble", "TroubleClose", "TroubleToggle", "TroubleRefresh" },
+    config = function()
+      require("trouble").setup {
+        mode = "document_diagnostics",
+        use_diagnostic_signs = true,
+        action_keys = {
+          close = { "q", "<esc>" },
+          cancel = "<c-e>",
+        },
+      }
+    end,
   },
 }
