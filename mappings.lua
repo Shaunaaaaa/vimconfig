@@ -162,7 +162,8 @@ return {
     ["<F10>"] = { desc = "  调试器：步骤结束" },
     ["<F11>"] = { desc = "  调试：进入" },
     ["<F23>"] = { desc = "  调试：退出" }, -- Shift+F11,
-    ["<leader>db"] = { desc = "  切换断点（F9）" },
+
+    ["<leader>db"] = { desc = "  添加断点（F9）" },
     ["<leader>dB"] = { desc = "  清除断点" },
     ["<leader>dc"] = { desc = "  启动/继续（F5）" },
     ["<leader>di"] = { desc = "  步入 (F11)" },
